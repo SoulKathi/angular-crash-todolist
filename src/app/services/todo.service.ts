@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Todo } from '../models/Todo';
+import { Console, assert } from 'console';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,10 +15,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TodoService {
-  todosUrl:string = 'https://jsonplaceholder.typicode.com/todos';
+  //todosUrl:string = 'https://jsonplaceholder.typicode.com/todos';
+  todosUrl:string = 'http://localhost:3000/todos';
+  todosPath:string = '../../../db.json';
   todosLimit = '?_limit=5';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+    console.log(this.todosPath)
+  }
 
   // Get Todos
   getTodos():Observable<Todo[]> {

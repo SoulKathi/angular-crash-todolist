@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "title": "bei Kisters anrufen",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "Termine und Mailinglisten Grüne",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "title": "Rezept Mole Soße",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "title": "Frau Bejan schreiben",
+      "completed": false,
+      "id": 4
+    }
+  ]
+}
