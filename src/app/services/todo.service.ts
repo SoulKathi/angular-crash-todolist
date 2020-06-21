@@ -18,15 +18,23 @@ export class TodoService {
   //todosUrl:string = 'https://jsonplaceholder.typicode.com/todos';
   todosUrl:string = 'http://localhost:3000/todos';
   todosPath:string = '../../../db.json';
-  todosLimit = '?_limit=5';
+  todosLimit = 'limit=5';
+  todosFilter = '';
 
   constructor(private http:HttpClient) { 
     console.log(this.todosPath)
   }
 
   // Get Todos
-  getTodos():Observable<Todo[]> {
-    return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);
+  getTodos(filter?:string,limit?:number):Observable<Todo[]> {
+    if(filter != null){
+      this.todosFilter=filter;
+    }
+    if(limit != null){
+      this.todosLimit = 'limit=' + limit
+    }
+    console.log(this.todosLimit)
+    return this.http.get<Todo[]>(`${this.todosUrl}?_${this.todosLimit}&${this.todosFilter}`);
   }
 
   // Delete Todo

@@ -2,7 +2,7 @@
   "todos": [
     {
       "title": "bei Kisters anrufen",
-      "completed": false,
+      "completed": true,
       "id": 1
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "title": "Frau Bejan schreiben",
-      "completed": false,
+      "completed": true,
       "id": 4
     }
   ]
